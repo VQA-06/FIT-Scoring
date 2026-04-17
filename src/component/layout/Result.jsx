@@ -17,7 +17,7 @@ const Result = ({ finalResult }) => {
         <table className="w-full text-center  overflow-hidden rounded-lg text-white text-shadow-md">
           <thead>
             <tr className="bg-primary/80 text-lg">
-              <th className="py-2 px-3 border-e border-black max-w-fit lg:max-w-1">No</th>
+              <th className="py-2 px-3 border-e-2 border-black max-w-fit lg:max-w-1">No</th>
               <th className="py-2 px-3">Nama</th>
               <th className="py-2 px-3">Nilai</th>
             </tr>
@@ -25,7 +25,7 @@ const Result = ({ finalResult }) => {
           <tbody>
             {sortedResult.map((i, j) => (
               <tr key={i.id} className="even:bg-primary/80 odd:bg-primary/50 font-semibold">
-                <td className="py-2 border-e border-black max-w-fit lg:max-w-1">{j}</td>
+                <td className="py-2 border-e-2 border-black max-w-fit lg:max-w-1">{j}</td>
                 <td className="text-left py-2 px-3">{i.nama}</td>
                 <td className="py-2 px-3">{i.nilaiFinal}</td> 
               </tr>
