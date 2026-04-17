@@ -25,7 +25,7 @@ const Result = ({ finalResult }) => {
           <tbody>
             {sortedResult.map((i, j) => (
               <tr key={i.id} className="even:bg-primary/80 odd:bg-primary/50 font-semibold">
-                <td className="py-2 border-e-2 border-black max-w-fit lg:max-w-1">{j}</td>
+                <td className="py-2 border-e-2 border-black max-w-fit lg:max-w-1">{j+1}</td>
                 <td className="text-left py-2 px-3">{i.nama}</td>
                 <td className="py-2 px-3">{i.nilaiFinal}</td> 
               </tr>
