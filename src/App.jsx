@@ -12,7 +12,7 @@ function App() {
   const pImage = `${url}/preview.png`;
 
   return (
-    <div className="relative min-h-screen bg-base">
+    <div className="relative min-h-dvh bg-base">
       <title>FIT Scoring System</title>
       <link rel="icon" type="image/svg+xml" href="/icon.png" />
       <meta
