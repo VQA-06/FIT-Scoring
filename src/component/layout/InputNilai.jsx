@@ -138,7 +138,7 @@ const InputNilai = ({ peserta, setPeserta, type }) => {
 
   return (
     <>
-      {peserta.map((p) => (
+      {peserta.map((p, i) => (
         <div
           className="p-5 flex flex-col bg-slate-800 rounded-xl mb-3 [&>div]:py-1 [&>div]:even:bg-slate-900 [&>div]:px-1 [&>div]:odd:bg-base"
           key={p.id}

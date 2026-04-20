@@ -32,7 +32,9 @@ const Hitung = ({ peserta, setPeserta, setStep, setFinalResult, type }) => {
     <section className="py-4 flex flex-col gap-3 pb-10">
       <Title teks={"Penilaian Keseluruhan"} />
       <Regular teks={"Input seluruh nilai dari peserta yang terdaftar."} />
-      <InputNilai peserta={peserta} setPeserta={setPeserta} type={type}/>
+      <div className="w-full gap-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-7">
+        <InputNilai peserta={peserta} setPeserta={setPeserta} type={type}/>
+      </div>
       <Btn teks={"Hitung & Lihat Hasil"} click={handleLanjut} />
     </section>
   );
