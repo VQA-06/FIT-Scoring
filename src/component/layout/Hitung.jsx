@@ -11,13 +11,12 @@ const Hitung = ({ peserta, setPeserta, setStep, setFinalResult, type }) => {
 
     const hitung = peserta.map((i) => {
       let h = 0;
-      Object.values(i.nilai).map((j, k) => {
+      Object.values(i.nilai).forEach((j, k) => {
         type == 'mikrotik' ? (k >= 5 && k <= 6 ? (h += j * p[k - 5]) : k == 7 ? (h -= j) : (h += j)) : k == 4 ? h -= j : h += j
       });
       return {
-        id: i.id,
-        nama: i.nama,
-        nilaiFinal: h,
+        ...i,
+        nilaiFinal: Number(h.toFixed(2)),
       };
     });
 

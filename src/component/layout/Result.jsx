@@ -9,11 +9,91 @@ const Result = ({ finalResult, type }) => {
     (a, b) => b.nilaiFinal - a.nilaiFinal,
   );
 
+  let index = 1;
+
+  const cat =
+    type == "mikrotik"
+      ? {
+          crimping: {
+            label: "Crimping & Internet",
+          },
+          hotspot: {
+            label: "Hotspot & Custom Portal",
+          },
+          profile: {
+            label: "User Profile & Limit",
+          },
+          walled: {
+            label: "Walled Garden",
+          },
+          firewall: {
+            label: "Firewall Block Ping",
+          },
+          presentasi: {
+            label: "Presentasi",
+          },
+          kebersihan: {
+            label: "Kebersihan",
+          },
+          pengurangan: {
+            label: "Pengurangan Poin",
+          },
+          tambahan: {
+            label: "Tambahan Poin",
+          },
+        }
+      : type == "website"
+        ? {
+            design: {
+              label: "Design UI/UX",
+            },
+            fungsi: {
+              label: "Fungsional & Responsivitas",
+            },
+            konten: {
+              label: "Kesesuaian Konten Tema",
+            },
+            presentasi: {
+              label: "Presentasi Hasil Karya",
+            },
+            pengurangan: {
+              label: "Pengurangan Poin",
+            },
+            tambahan: {
+              label: "Tambahan Poin",
+            },
+          }
+        : {
+            tema: {
+              label: "Kesesuaian Tema",
+            },
+            Typograpy: {
+              label: "Kerapihan Typograpy",
+            },
+            ide: {
+              label: "Ide/Kreativitas Desaign",
+            },
+            warna: {
+              label: "Pemilihan Warna",
+            },
+            pengurangan: {
+              label: "Pengurangan Poin",
+            },
+            tambahan: {
+              label: "Tambahan Poin",
+            },
+          };
+
+  const nKey = Object.keys(finalResult[0]?.nilai).map((k) => ({
+    dKey : k,
+    labels : cat[k].label
+  }));
+
   const Schema = [
     {
       column: "No.",
       type: Number,
-      value: (data) => data.id,
+      value: (data) => index++,
       align: "center",
       fontSize: 12,
       borderColor: "#000000",
@@ -29,8 +109,18 @@ const Result = ({ finalResult, type }) => {
       borderColor: "#000000",
       borderStyle: "thin",
     },
+    ...nKey.map((k) => ({
+      column: k.labels,
+      type: Number,
+      value: (data) => data.nilai[k.dKey],
+      width: 30,
+      align: "left",
+      fontSize: 12,
+      borderColor: "#000000",
+      borderStyle: "thin",
+    })),
     {
-      column: "Nilai",
+      column: "Total",
       type: Number,
       value: (data) => data.nilaiFinal,
       align: "center",
@@ -80,7 +170,9 @@ const Result = ({ finalResult, type }) => {
                 key={i.id}
                 className="even:bg-blue-400 odd:bg-blue-300 font-semibold"
               >
-                <td className="py-2 px-3 border-e border-base text-center">{j + 1}</td>
+                <td className="py-2 px-3 border-e border-base text-center">
+                  {j + 1}
+                </td>
                 <td className="text-left py-2 px-3">{i.nama}</td>
                 <td className="py-2 px-3">{i.nilaiFinal}</td>
               </tr>
