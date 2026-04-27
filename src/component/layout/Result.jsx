@@ -30,10 +30,10 @@ const Result = ({ finalResult, type }) => {
             label: "Firewall Block Ping",
           },
           presentasi: {
-            label: "Presentasi",
+            label: "Presentasi (%)",
           },
           kebersihan: {
-            label: "Kebersihan",
+            label: "Kebersihan (%)",
           },
           pengurangan: {
             label: "Pengurangan Poin",
