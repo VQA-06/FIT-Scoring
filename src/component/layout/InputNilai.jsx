@@ -95,12 +95,12 @@ const InputNilai = ({ peserta, setPeserta, type }) => {
             Typograpy: {
               label: "Kerapihan Typograpy",
               type: "chi",
-              default: 30,
+              default: 25,
             },
             ide: {
               label: "Ide/Kreativitas Desaign",
               type: "chi",
-              default: 25,
+              default: 30,
             },
             warna: {
               label: "Pemilihan Warna",
